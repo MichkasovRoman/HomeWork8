@@ -4,7 +4,7 @@
 int GetSum(int M, int N)
 {
     if (M == N) return M;
-    return GetSum(M + 1, N - 1) + M + N;
+    return GetSum(M, N - 1) + N;
 }
 
 Console.Clear();
