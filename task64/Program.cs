@@ -3,12 +3,14 @@
 
 string GetReverseOrder(int number)
 {
-    if (number == 1) return number.ToString();
-    else
-    return $"{GetReverseOrder(number - 1)}"; 
+    if (number == 1) return number.ToString() + ".";
+    return $"{number}, " + GetReverseOrder(number - 1); 
 }
 
 Console.Clear();
-int m = int.Parse(Console.ReadLine()!);
-string a = GetReverseOrder(m);
-Console.Write(a);
+Console.Write("Задайте натуральное число: ");
+int givenNumber = int.Parse(Console.ReadLine()!);
+string resultString = GetReverseOrder(givenNumber);
+Console.WriteLine(String.Empty);
+Console.WriteLine($"Натуральные числа в промежутке от {givenNumber} до 1 по убыванию: ");
+Console.Write(resultString);
